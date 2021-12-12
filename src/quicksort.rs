@@ -42,12 +42,8 @@ where
     right
 }
 
-pub fn quicksort_by_key<T, U, F>(
-    array: &mut [T],
-    low: usize,
-    high: usize,
-    key: F,
-) where
+pub fn quicksort_by_key<T, U, F>(array: &mut [T], low: usize, high: usize, key: F)
+where
     T: Clone,
     U: PartialEq + PartialOrd,
     F: Copy + Fn(&T) -> U,
@@ -63,12 +59,7 @@ pub fn quicksort_by_key<T, U, F>(
     }
 }
 
-pub fn partition_by_key<T, U, F>(
-    array: &mut [T],
-    low: usize,
-    high: usize,
-    key: F,
-) -> usize
+pub fn partition_by_key<T, U, F>(array: &mut [T], low: usize, high: usize, key: F) -> usize
 where
     T: Clone,
     U: PartialEq + PartialOrd,

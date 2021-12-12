@@ -13,12 +13,8 @@ where
     introsort_helper(array, 0, array_len - 1, max_depth);
 }
 
-fn introsort_helper<T>(
-    array: &mut [T],
-    low: usize,
-    high: usize,
-    max_depth: usize,
-) where
+fn introsort_helper<T>(array: &mut [T], low: usize, high: usize, max_depth: usize)
+where
     T: Clone + PartialEq + PartialOrd,
 {
     if array.len() < 16 {
