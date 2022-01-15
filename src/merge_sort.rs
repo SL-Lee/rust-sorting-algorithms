@@ -89,21 +89,9 @@ mod tests {
         #[derive(Clone, Debug, PartialEq)]
         struct Wrapper(i32);
 
-        let array = vec![
-            Wrapper(12),
-            Wrapper(11),
-            Wrapper(13),
-            Wrapper(5),
-            Wrapper(6),
-        ];
+        let array = vec![Wrapper(12), Wrapper(11), Wrapper(13), Wrapper(5), Wrapper(6)];
         assert_eq!(
-            vec![
-                Wrapper(5),
-                Wrapper(6),
-                Wrapper(11),
-                Wrapper(12),
-                Wrapper(13),
-            ],
+            vec![Wrapper(5), Wrapper(6), Wrapper(11), Wrapper(12), Wrapper(13),],
             merge_sort_by_key(&array, |x| x.0),
         );
     }

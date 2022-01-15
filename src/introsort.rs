@@ -89,23 +89,8 @@ mod tests {
         #[derive(Clone, Debug, PartialEq)]
         struct Wrapper(i32);
 
-        let mut array = vec![
-            Wrapper(12),
-            Wrapper(11),
-            Wrapper(13),
-            Wrapper(5),
-            Wrapper(6),
-        ];
+        let mut array = vec![Wrapper(12), Wrapper(11), Wrapper(13), Wrapper(5), Wrapper(6)];
         introsort_by_key(&mut array, |x| x.0);
-        assert_eq!(
-            vec![
-                Wrapper(5),
-                Wrapper(6),
-                Wrapper(11),
-                Wrapper(12),
-                Wrapper(13),
-            ],
-            array,
-        );
+        assert_eq!(vec![Wrapper(5), Wrapper(6), Wrapper(11), Wrapper(12), Wrapper(13),], array,);
     }
 }
